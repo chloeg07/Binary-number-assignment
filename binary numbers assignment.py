@@ -28,3 +28,37 @@ if choiceint == 2:
         binarylist.append(decimalnum1left)
     binarylist.reverse()
     print("Your Decimal number in Binary is",binarylist) 
+#Add two Binary numbers
+if choiceint == 3:
+    print("You will be asked to enter two Binary numbers that you want to add together")
+    binnum1 = input("Enter your first Binary number ....  ")
+    binnum2 = input("Enter your second Binary number .... ")
+    newnum = []
+    R = 0
+    carry = 0
+    startnum = 0
+    startnum2 = 0
+    print(binnum1, binnum2)
+    lenbinnum1 = len(binnum1)
+    lenbinnum2 = len(binnum2)
+    for i in range (lenbinnum1) :
+        startnum = startnum - 1
+        variable1 = binnum1[startnum]
+        variable2 = binnum2[startnum]
+        newvari = int(variable1) + int(variable2) + carry
+        if newvari > 1:
+            carry = 1
+            if newvari == 2:
+                newnum.append(0)
+            else: newnum.append(1)
+        else:
+            carry = 0
+            newnum.append(newvari)
+            carry = carry - carry
+    if carry == 1:
+        newnum.append(carry) 
+        newnum.reverse()
+        print("Final list is", newnum)
+            
+    
+
